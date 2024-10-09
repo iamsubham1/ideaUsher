@@ -6,7 +6,7 @@ const swaggerUi = require('swagger-ui-express');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT;
 
 // Swagger definition
 const swaggerOptions = {
@@ -66,7 +66,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // CORS configuration
-const allowedOrigins = ['http://localhost:5713', '*', 'http://localhost:8081'];
+const allowedOrigins = ['http://localhost:5713', '*', 'http://localhost:8080'];
 app.use(cors({
     origin: function (origin, callback) {
         if (allowedOrigins.indexOf(origin || '') !== -1 || !origin) {
