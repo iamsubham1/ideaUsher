@@ -6,7 +6,7 @@ require('dotenv').config();
 // Function to upload an image to S3 after processing
 const uploadImage = async (filePath) => {
     try {
-        // Process the image using sharp (resize, format)
+        // Process the image 
         const transformedImageBuffer = await sharp(filePath)
             .toFormat('jpeg')
             .rotate(0)

@@ -58,7 +58,6 @@ const swaggerOptions = {
     apis: ['./routes/postRoutes.js'], // Path to your API docs
 };
 
-// Initialize swagger-jsdoc
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 // Middleware
@@ -66,7 +65,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // CORS configuration
-const allowedOrigins = ['http://localhost:5713', '*', 'http://localhost:8080'];
+const allowedOrigins = ['http://localhost:5713', 'http://localhost:8080', 'https://ideausher-kko8.onrender.com'];
 app.use(cors({
     origin: function (origin, callback) {
         if (allowedOrigins.indexOf(origin || '') !== -1 || !origin) {
